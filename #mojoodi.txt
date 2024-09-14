@@ -1,0 +1,29 @@
+#mojoodi
+import random
+l = {}
+dict_chance = {}
+mojodi = "mojodi"
+def dict_acc():
+    while not(mojodi == 0):
+        name = str(input("put a name in here : "))
+        mojodi = int(input("put a mojodi in here : "))
+        l[name] = mojodi
+        s = 0
+        for key in l:
+            s += l[key]
+        dict_chance[name] = l[key]
+
+
+def javab():
+    interval = {}
+    end = 0
+    r = random.randint(0,s*100)
+    for key in dict_chance:
+        interval[key] = (end , end+100*dict_chance[key])
+        end = end+100*dict_chance[key]
+    for key in interval:
+            if r > interval[key][0] and r < interval[key][1]:
+                print(f"the winner is {key}")
+                break
+            elif r > interval[key][0] and r < interval[key][1]:
+                print("AW sowwy we ran into a problem")
